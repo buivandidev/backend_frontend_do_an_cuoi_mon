@@ -1,0 +1,259 @@
+﻿PhuongXa.API\DbSeeder.cs | Line 47 | FullName = "Quản trị viên",
+PhuongXa.API\DbSeeder.cs | Line 72 | new Category { Name = "Tin tức tổng hợp", Slug = "tin-tuc-tong-hop", Type = CategoryType.News, SortOrder = 1 },
+PhuongXa.API\DbSeeder.cs | Line 73 | new Category { Name = "Thông báo - Quyết định", Slug = "thong-bao-quyet-dinh", Type = CategoryType.News, SortOrder = 2 },
+PhuongXa.API\DbSeeder.cs | Line 74 | new Category { Name = "Văn hóa - Xã hội", Slug = "van-hoa-xa-hoi", Type = CategoryType.News, SortOrder = 3 },
+PhuongXa.API\DbSeeder.cs | Line 75 | new Category { Name = "Kinh tế - Đầu tư", Slug = "kinh-te-dau-tu", Type = CategoryType.News, SortOrder = 4 }
+PhuongXa.API\DbSeeder.cs | Line 79 | new Category { Name = "Hộ tịch - Hộ khẩu", Slug = "ho-tich-ho-khau", Type = CategoryType.Service, SortOrder = 1 },
+PhuongXa.API\DbSeeder.cs | Line 80 | new Category { Name = "Xây dựng - Đất đai", Slug = "xay-dung-dat-dai", Type = CategoryType.Service, SortOrder = 2 },
+PhuongXa.API\DbSeeder.cs | Line 81 | new Category { Name = "Kinh doanh - Thuế", Slug = "kinh-doanh-thue", Type = CategoryType.Service, SortOrder = 3 }
+PhuongXa.API\DbSeeder.cs | Line 92 | new SiteSetting { Key = "SiteName", Value = "UBND Phường", Type = "string" },
+PhuongXa.API\DbSeeder.cs | Line 93 | new SiteSetting { Key = "SiteDescription", Value = "Cổng thông tin điện tử Phường/Xã", Type = "string" },
+PhuongXa.API\DbSeeder.cs | Line 94 | new SiteSetting { Key = "Address", Value = "Số 1, Đường ABC, Phường XYZ, Quận QRS, TP. HCM", Type = "string" },
+PhuongXa.API\DbSeeder.cs | Line 97 | new SiteSetting { Key = "FooterText", Value = "© UBND Phường - Cổng thông tin điện tử", Type = "string" }
+PhuongXa.API\Program.cs | Line 53 | return new BadRequestObjectResult(ApiResponse.Fail("Dữ liệu không hợp lệ", errors));
+PhuongXa.API\Program.cs | Line 87 | ApiResponse.Fail("Quá nhiều yêu cầu. Vui lòng thử lại sau."));
+PhuongXa.API\Controllers\ApplicationsController.cs | Line 43 | return BadRequest(ApiResponse.Fail("Dịch vụ không tồn tại hoặc đã ngừng hoạt động"));
+PhuongXa.API\Controllers\ApplicationsController.cs | Line 63 | "Nộp hồ sơ thành công. Vui lòng lưu mã tra cứu của bạn."));
+PhuongXa.API\Controllers\ApplicationsController.cs | Line 77 | return NotFound(ApiResponse.Fail("Không tìm thấy hồ sơ"));
+PhuongXa.API\Controllers\ApplicationsController.cs | Line 82 | return StatusCode(403, ApiResponse.Fail("Bạn không có quyền tải file cho hồ sơ này"));
+PhuongXa.API\Controllers\ApplicationsController.cs | Line 84 | return StatusCode(403, ApiResponse.Fail("Không thể tải file cho hồ sơ ẩn danh"));
+PhuongXa.API\Controllers\ApplicationsController.cs | Line 90 | return BadRequest(ApiResponse.Fail($"Định dạng file '{ext}' không được phép"));
+PhuongXa.API\Controllers\ApplicationsController.cs | Line 106 | return Ok(ApiResponse.Ok("Tải file lên thành công"));
+PhuongXa.API\Controllers\ApplicationsController.cs | Line 114 | return BadRequest(ApiResponse.Fail("Cần cung cấp mã tra cứu và email"));
+PhuongXa.API\Controllers\ApplicationsController.cs | Line 123 | return NotFound(ApiResponse.Fail("Không tìm thấy hồ sơ hoặc thông tin không khớp"));
+PhuongXa.API\Controllers\ApplicationsController.cs | Line 137 | return NotFound(ApiResponse.Fail("Không tìm thấy hồ sơ"));
+PhuongXa.API\Controllers\ApplicationsController.cs | Line 195 | return NotFound(ApiResponse.Fail("Không tìm thấy hồ sơ"));
+PhuongXa.API\Controllers\ApplicationsController.cs | Line 225 | return Ok(ApiResponse.Ok("Cập nhật trạng thái hồ sơ thành công"));
+PhuongXa.API\Controllers\ArticlesController.cs | Line 131 | return BadRequest(ApiResponse.Fail("Danh mục không tồn tại hoặc đã bị vô hiệu hóa"));
+PhuongXa.API\Controllers\ArticlesController.cs | Line 163 | return BadRequest(ApiResponse.Fail("Danh mục không tồn tại hoặc đã bị vô hiệu hóa"));
+PhuongXa.API\Controllers\ArticlesController.cs | Line 220 | return NotFound(ApiResponse.Fail("Không tìm thấy bài viết"));
+PhuongXa.API\Controllers\AuthController.cs | Line 75 | return Unauthorized(ApiResponse.Fail("Email hoặc mật khẩu không đúng"));
+PhuongXa.API\Controllers\AuthController.cs | Line 81 | return Unauthorized(ApiResponse.Fail("Tài khoản bị khóa tạm thời"));
+PhuongXa.API\Controllers\AuthController.cs | Line 82 | return Unauthorized(ApiResponse.Fail("Email hoặc mật khẩu không đúng"));
+PhuongXa.API\Controllers\AuthController.cs | Line 111 | return Ok(ApiResponse<AuthResponseDto>.Ok(response, "Đăng nhập thành công"));
+PhuongXa.API\Controllers\AuthController.cs | Line 120 | return BadRequest(ApiResponse.Fail("Email đã được sử dụng"));
+PhuongXa.API\Controllers\AuthController.cs | Line 133 | return BadRequest(ApiResponse.Fail("Tạo tài khoản thất bại",
+PhuongXa.API\Controllers\AuthController.cs | Line 144 | return Ok(ApiResponse.Ok("Đăng ký tài khoản thành công"));
+PhuongXa.API\Controllers\AuthController.cs | Line 152 | return Unauthorized(ApiResponse.Fail("Refresh token không hợp lệ"));
+PhuongXa.API\Controllers\AuthController.cs | Line 160 | return Unauthorized(ApiResponse.Fail("Refresh token đã hết hạn hoặc không hợp lệ"));
+PhuongXa.API\Controllers\AuthController.cs | Line 163 | return Unauthorized(ApiResponse.Fail("Tài khoản đã bị vô hiệu hóa"));
+PhuongXa.API\Controllers\AuthController.cs | Line 201 | return Ok(ApiResponse.Ok("Đăng xuất thành công"));
+PhuongXa.API\Controllers\AuthController.cs | Line 217 | return Ok(ApiResponse.Ok($"Đã thu hồi {tokens.Count} phiên đăng nhập"));
+PhuongXa.API\Controllers\AuthController.cs | Line 226 | return NotFound(ApiResponse.Fail("Không tìm thấy người dùng"));
+PhuongXa.API\Controllers\AuthController.cs | Line 245 | return NotFound(ApiResponse.Fail("Không tìm thấy người dùng"));
+PhuongXa.API\Controllers\AuthController.cs | Line 248 | return BadRequest(ApiResponse.Fail("Mật khẩu xác nhận không khớp"));
+PhuongXa.API\Controllers\AuthController.cs | Line 252 | return BadRequest(ApiResponse.Fail("Đổi mật khẩu thất bại",
+PhuongXa.API\Controllers\AuthController.cs | Line 255 | return Ok(ApiResponse.Ok("Đổi mật khẩu thành công"));
+PhuongXa.API\Controllers\CategoriesController.cs | Line 117 | return BadRequest(ApiResponse.Fail("Không thể xóa danh mục đang có bài viết"));
+PhuongXa.API\Controllers\CategoriesController.cs | Line 121 | return BadRequest(ApiResponse.Fail("Không thể xóa danh mục đang có danh mục con"));
+PhuongXa.API\Controllers\CommentsController.cs | Line 77 | return NotFound(ApiResponse.Fail("Bài viết không tồn tại hoặc chưa được xuất bản"));
+PhuongXa.API\Controllers\CommentsController.cs | Line 84 | return BadRequest(ApiResponse.Fail("Bình luận cha không tồn tại"));
+PhuongXa.API\Controllers\ContactController.cs | Line 38 | return Ok(ApiResponse.Ok("Phản ánh của bạn đã được gửi thành công. Chúng tôi sẽ phản hồi sớm nhất có thể."));
+PhuongXa.API\Controllers\ContactController.cs | Line 65 | return NotFound(ApiResponse.Fail("Không tìm thấy tin nhắn"));
+PhuongXa.API\Controllers\ContactController.cs | Line 71 | return Ok(ApiResponse.Ok("Đánh dấu đã đọc"));
+PhuongXa.API\Controllers\ContactController.cs | Line 80 | return NotFound(ApiResponse.Fail("Không tìm thấy tin nhắn"));
+PhuongXa.API\Controllers\ContactController.cs | Line 84 | return Ok(ApiResponse.Ok("Xóa tin nhắn thành công"));
+PhuongXa.API\Controllers\DashboardController.cs | Line 106 | new() { Label = "Bài viết xuất bản", Data = data, BackgroundColor = "rgba(59,130,246,0.5)", BorderColor = "#3b82f6" }
+PhuongXa.API\Controllers\DashboardController.cs | Line 131 | new() { Label = "Hồ sơ theo trạng thái", Data = data,
+PhuongXa.API\Controllers\NotificationsController.cs | Line 62 | return NotFound(ApiResponse.Fail("Không tìm thấy thông báo"));
+PhuongXa.API\Controllers\NotificationsController.cs | Line 70 | return Ok(ApiResponse.Ok("Đã đánh dấu đã đọc"));
+PhuongXa.API\Controllers\NotificationsController.cs | Line 84 | return Ok(ApiResponse.Ok($"Đã đánh dấu đọc {count} thông báo"));
+PhuongXa.API\Controllers\NotificationsController.cs | Line 95 | return NotFound(ApiResponse.Fail("Không tìm thấy thông báo"));
+PhuongXa.API\Controllers\NotificationsController.cs | Line 100 | return Ok(ApiResponse.Ok("Đã xóa thông báo"));
+PhuongXa.API\Controllers\ProfileController.cs | Line 42 | return NotFound(ApiResponse.Fail("Không tìm thấy người dùng"));
+PhuongXa.API\Controllers\ProfileController.cs | Line 56 | return NotFound(ApiResponse.Fail("Không tìm thấy người dùng"));
+PhuongXa.API\Controllers\ProfileController.cs | Line 64 | return BadRequest(ApiResponse.Fail("Cập nhật thất bại",
+PhuongXa.API\Controllers\ProfileController.cs | Line 67 | return Ok(ApiResponse.Ok("Cập nhật thông tin thành công"));
+PhuongXa.API\Controllers\ProfileController.cs | Line 75 | return BadRequest(ApiResponse.Fail("Vui lòng chọn file ảnh"));
+PhuongXa.API\Controllers\ProfileController.cs | Line 79 | return BadRequest(ApiResponse.Fail("Chỉ chấp nhận file ảnh (jpg, png, webp, gif)"));
+PhuongXa.API\Controllers\ProfileController.cs | Line 84 | return BadRequest(ApiResponse.Fail($"Định dạng file '{ext}' không được phép"));
+PhuongXa.API\Controllers\ProfileController.cs | Line 88 | return NotFound(ApiResponse.Fail("Không tìm thấy người dùng"));
+PhuongXa.API\Controllers\ProfileController.cs | Line 101 | "Cập nhật ảnh đại diện thành công"));
+PhuongXa.API\Controllers\SearchController.cs | Line 30 | return BadRequest(ApiResponse.Fail("Từ khóa tìm kiếm phải có ít nhất 2 ký tự"));
+PhuongXa.API\Controllers\SearchController.cs | Line 33 | return BadRequest(ApiResponse.Fail("Từ khóa tìm kiếm không được vượt quá 200 ký tự"));
+PhuongXa.API\Controllers\SearchController.cs | Line 59 | $"Tìm thấy {result.TotalCount} kết quả cho \"{keyword}\""));
+PhuongXa.API\Controllers\ServicesController.cs | Line 124 | return BadRequest(ApiResponse.Fail("Mã dịch vụ đã tồn tại"));
+PhuongXa.API\Controllers\ServicesController.cs | Line 144 | return BadRequest(ApiResponse.Fail("Không thể xóa dịch vụ đang có hồ sơ liên kết"));
+PhuongXa.API\Controllers\SettingsController.cs | Line 55 | return NotFound(ApiResponse.Fail("Không tìm thấy cài đặt"));
+PhuongXa.API\Controllers\SettingsController.cs | Line 59 | return NotFound(ApiResponse.Fail("Không tìm thấy cài đặt"));
+PhuongXa.API\Controllers\SettingsController.cs | Line 76 | return NotFound(ApiResponse.Fail("Không tìm thấy cài đặt"));
+PhuongXa.API\Controllers\SettingsController.cs | Line 80 | return Ok(ApiResponse.Ok("Cập nhật cài đặt thành công"));
+PhuongXa.API\Controllers\SettingsController.cs | Line 88 | return BadRequest(ApiResponse.Fail("Khóa cài đặt đã tồn tại"));
+PhuongXa.API\Controllers\SettingsController.cs | Line 97 | return Ok(ApiResponse<object>.Ok(new { setting.Id, setting.Key }, "Tạo cài đặt thành công"));
+PhuongXa.API\Controllers\UsersController.cs | Line 76 | return NotFound(ApiResponse.Fail("Không tìm thấy người dùng"));
+PhuongXa.API\Controllers\UsersController.cs | Line 97 | return BadRequest(ApiResponse.Fail("Tạo tài khoản thất bại",
+PhuongXa.API\Controllers\UsersController.cs | Line 102 | ApiResponse<object>.Ok(new { user.Id }, "Tạo tài khoản thành công"));
+PhuongXa.API\Controllers\UsersController.cs | Line 111 | return NotFound(ApiResponse.Fail("Không tìm thấy người dùng"));
+PhuongXa.API\Controllers\UsersController.cs | Line 132 | return Ok(ApiResponse.Ok("Cập nhật thành công"));
+PhuongXa.API\Controllers\UsersController.cs | Line 141 | return BadRequest(ApiResponse.Fail("Không thể xóa tài khoản đang đăng nhập"));
+PhuongXa.API\Controllers\UsersController.cs | Line 145 | return NotFound(ApiResponse.Fail("Không tìm thấy người dùng"));
+PhuongXa.API\Controllers\UsersController.cs | Line 150 | return BadRequest(ApiResponse.Fail("Không thể xóa người dùng đang có bài viết. Hãy chuyển bài viết sang tác giả khác trước"));
+PhuongXa.API\Controllers\UsersController.cs | Line 154 | return BadRequest(ApiResponse.Fail("Không thể xóa người dùng đang có file media. Hãy xóa media trước"));
+PhuongXa.API\Controllers\UsersController.cs | Line 166 | return Ok(ApiResponse.Ok("Vô hiệu hóa tài khoản thành công"));
+PhuongXa.API\Middleware\GlobalExceptionMiddleware.cs | Line 44 | UnauthorizedAccessException => (HttpStatusCode.Unauthorized, "Không có quyền truy cập"),
+PhuongXa.API\Middleware\GlobalExceptionMiddleware.cs | Line 45 | KeyNotFoundException => (HttpStatusCode.NotFound, "Không tìm thấy tài nguyên"),
+PhuongXa.API\Middleware\GlobalExceptionMiddleware.cs | Line 46 | ArgumentException or InvalidOperationException => (HttpStatusCode.BadRequest, "Dữ liệu yêu cầu không hợp lệ"),
+PhuongXa.API\Middleware\GlobalExceptionMiddleware.cs | Line 47 | FluentValidation.ValidationException => (HttpStatusCode.BadRequest, "Dữ liệu không hợp lệ"),
+PhuongXa.API\Middleware\GlobalExceptionMiddleware.cs | Line 48 | DbUpdateException => (HttpStatusCode.Conflict, "Xung đột dữ liệu, vui lòng thử lại"),
+PhuongXa.API\Middleware\GlobalExceptionMiddleware.cs | Line 49 | OperationCanceledException => (HttpStatusCode.BadRequest, "Yêu cầu đã bị hủy"),
+PhuongXa.API\Middleware\GlobalExceptionMiddleware.cs | Line 50 | _ => (HttpStatusCode.InternalServerError, "Đã xảy ra lỗi hệ thống, vui lòng thử lại sau")
+PhuongXa.Application\DTOs\Profile\ProfileDto.cs | Line 18 | [Required(ErrorMessage = "Họ tên không được để trống")]
+PhuongXa.Application\DTOs\Profile\ProfileDto.cs | Line 19 | [StringLength(100, ErrorMessage = "Họ tên tối đa 100 ký tự")]
+PhuongXa.Application\DTOs\Profile\ProfileDto.cs | Line 22 | [Phone(ErrorMessage = "Số điện thoại không hợp lệ")]
+PhuongXa.Application\Mappings\MappingProfile.cs | Line 47 | s.User != null ? s.User.FullName : s.GuestName ?? "Ẩn danh"))
+PhuongXa.Application\Mappings\MappingProfile.cs | Line 124 | {"à","a"},{"á","a"},{"ả","a"},{"ã","a"},{"ạ","a"},
+PhuongXa.Application\Mappings\MappingProfile.cs | Line 125 | {"ă","a"},{"ằ","a"},{"ắ","a"},{"ẳ","a"},{"ẵ","a"},{"ặ","a"},
+PhuongXa.Application\Mappings\MappingProfile.cs | Line 126 | {"â","a"},{"ầ","a"},{"ấ","a"},{"ẩ","a"},{"ẫ","a"},{"ậ","a"},
+PhuongXa.Application\Mappings\MappingProfile.cs | Line 127 | {"đ","d"},
+PhuongXa.Application\Mappings\MappingProfile.cs | Line 128 | {"è","e"},{"é","e"},{"ẻ","e"},{"ẽ","e"},{"ẹ","e"},
+PhuongXa.Application\Mappings\MappingProfile.cs | Line 129 | {"ê","e"},{"ề","e"},{"ế","e"},{"ể","e"},{"ễ","e"},{"ệ","e"},
+PhuongXa.Application\Mappings\MappingProfile.cs | Line 130 | {"ì","i"},{"í","i"},{"ỉ","i"},{"ĩ","i"},{"ị","i"},
+PhuongXa.Application\Mappings\MappingProfile.cs | Line 131 | {"ò","o"},{"ó","o"},{"ỏ","o"},{"õ","o"},{"ọ","o"},
+PhuongXa.Application\Mappings\MappingProfile.cs | Line 132 | {"ô","o"},{"ồ","o"},{"ố","o"},{"ổ","o"},{"ỗ","o"},{"ộ","o"},
+PhuongXa.Application\Mappings\MappingProfile.cs | Line 133 | {"ơ","o"},{"ờ","o"},{"ớ","o"},{"ở","o"},{"ỡ","o"},{"ợ","o"},
+PhuongXa.Application\Mappings\MappingProfile.cs | Line 134 | {"ù","u"},{"ú","u"},{"ủ","u"},{"ũ","u"},{"ụ","u"},
+PhuongXa.Application\Mappings\MappingProfile.cs | Line 135 | {"ư","u"},{"ừ","u"},{"ứ","u"},{"ử","u"},{"ữ","u"},{"ự","u"},
+PhuongXa.Application\Mappings\MappingProfile.cs | Line 136 | {"ỳ","y"},{"ý","y"},{"ỷ","y"},{"ỹ","y"},{"ỵ","y"}
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 11 | .NotEmpty().WithMessage("Tiêu đề không được để trống")
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 12 | .MinimumLength(5).WithMessage("Tiêu đề phải có ít nhất 5 ký tự")
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 13 | .MaximumLength(300).WithMessage("Tiêu đề không được vượt quá 300 ký tự");
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 16 | .MaximumLength(500).WithMessage("Tóm tắt không được vượt quá 500 ký tự")
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 20 | .NotEmpty().WithMessage("Nội dung không được để trống")
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 21 | .MaximumLength(100_000).WithMessage("Nội dung không được vượt quá 100.000 ký tự");
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 24 | .NotEmpty().WithMessage("Danh mục không được để trống");
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 27 | .MaximumLength(200).WithMessage("MetaTitle không được vượt quá 200 ký tự")
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 31 | .MaximumLength(500).WithMessage("MetaDescription không được vượt quá 500 ký tự")
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 35 | .MaximumLength(500).WithMessage("Tags không được vượt quá 500 ký tự")
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 39 | .MaximumLength(500).WithMessage("Đường dẫn thumbnail không được vượt quá 500 ký tự")
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 49 | .NotEmpty().WithMessage("Tiêu đề không được để trống")
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 50 | .MinimumLength(5).WithMessage("Tiêu đề phải có ít nhất 5 ký tự")
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 51 | .MaximumLength(300).WithMessage("Tiêu đề không được vượt quá 300 ký tự");
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 54 | .MaximumLength(500).WithMessage("Tóm tắt không được vượt quá 500 ký tự")
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 58 | .NotEmpty().WithMessage("Nội dung không được để trống")
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 59 | .MaximumLength(100_000).WithMessage("Nội dung không được vượt quá 100.000 ký tự");
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 62 | .NotEmpty().WithMessage("Danh mục không được để trống");
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 65 | .MaximumLength(200).WithMessage("MetaTitle không được vượt quá 200 ký tự")
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 69 | .MaximumLength(500).WithMessage("MetaDescription không được vượt quá 500 ký tự")
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 73 | .MaximumLength(500).WithMessage("Tags không được vượt quá 500 ký tự")
+PhuongXa.Application\Validators\ArticleDtoValidators.cs | Line 77 | .MaximumLength(500).WithMessage("Đường dẫn thumbnail không được vượt quá 500 ký tự")
+PhuongXa.Application\Validators\CategoryDtoValidators.cs | Line 11 | .NotEmpty().WithMessage("Tên danh mục không được để trống")
+PhuongXa.Application\Validators\CategoryDtoValidators.cs | Line 12 | .MaximumLength(200).WithMessage("Tên danh mục không được vượt quá 200 ký tự");
+PhuongXa.Application\Validators\CategoryDtoValidators.cs | Line 15 | .IsInEnum().WithMessage("Loại danh mục không hợp lệ");
+PhuongXa.Application\Validators\CategoryDtoValidators.cs | Line 18 | .GreaterThanOrEqualTo(0).WithMessage("Thứ tự sắp xếp không được âm");
+PhuongXa.Application\Validators\CategoryDtoValidators.cs | Line 27 | .NotEmpty().WithMessage("Tên danh mục không được để trống")
+PhuongXa.Application\Validators\CategoryDtoValidators.cs | Line 28 | .MaximumLength(200).WithMessage("Tên danh mục không được vượt quá 200 ký tự");
+PhuongXa.Application\Validators\CategoryDtoValidators.cs | Line 31 | .IsInEnum().WithMessage("Loại danh mục không hợp lệ");
+PhuongXa.Application\Validators\CategoryDtoValidators.cs | Line 34 | .GreaterThanOrEqualTo(0).WithMessage("Thứ tự sắp xếp không được âm");
+PhuongXa.Application\Validators\ChangePasswordDtoValidator.cs | Line 11 | .NotEmpty().WithMessage("Mật khẩu hiện tại không được để trống");
+PhuongXa.Application\Validators\ChangePasswordDtoValidator.cs | Line 14 | .NotEmpty().WithMessage("Mật khẩu mới không được để trống")
+PhuongXa.Application\Validators\ChangePasswordDtoValidator.cs | Line 15 | .MinimumLength(8).WithMessage("Mật khẩu mới phải có ít nhất 8 ký tự")
+PhuongXa.Application\Validators\ChangePasswordDtoValidator.cs | Line 16 | .MaximumLength(128).WithMessage("Mật khẩu không được vượt quá 128 ký tự")
+PhuongXa.Application\Validators\ChangePasswordDtoValidator.cs | Line 17 | .Matches("[A-Z]").WithMessage("Mật khẩu phải có ít nhất 1 chữ hoa")
+PhuongXa.Application\Validators\ChangePasswordDtoValidator.cs | Line 18 | .Matches("[0-9]").WithMessage("Mật khẩu phải có ít nhất 1 chữ số")
+PhuongXa.Application\Validators\ChangePasswordDtoValidator.cs | Line 19 | .Matches("[^a-zA-Z0-9]").WithMessage("Mật khẩu phải có ít nhất 1 ký tự đặc biệt");
+PhuongXa.Application\Validators\ChangePasswordDtoValidator.cs | Line 22 | .NotEmpty().WithMessage("Xác nhận mật khẩu không được để trống")
+PhuongXa.Application\Validators\ChangePasswordDtoValidator.cs | Line 23 | .Equal(x => x.NewPassword).WithMessage("Xác nhận mật khẩu không khớp");
+PhuongXa.Application\Validators\CreateCommentDtoValidator.cs | Line 11 | .NotEmpty().WithMessage("Bài viết không được để trống");
+PhuongXa.Application\Validators\CreateCommentDtoValidator.cs | Line 14 | .NotEmpty().WithMessage("Nội dung bình luận không được để trống")
+PhuongXa.Application\Validators\CreateCommentDtoValidator.cs | Line 15 | .MinimumLength(2).WithMessage("Nội dung bình luận phải có ít nhất 2 ký tự")
+PhuongXa.Application\Validators\CreateCommentDtoValidator.cs | Line 16 | .MaximumLength(1000).WithMessage("Nội dung bình luận không được vượt quá 1000 ký tự");
+PhuongXa.Application\Validators\CreateCommentDtoValidator.cs | Line 19 | .MaximumLength(100).WithMessage("Tên không được vượt quá 100 ký tự")
+PhuongXa.Application\Validators\CreateCommentDtoValidator.cs | Line 23 | .EmailAddress().WithMessage("Email không hợp lệ")
+PhuongXa.Application\Validators\CreateCommentDtoValidator.cs | Line 24 | .MaximumLength(256).WithMessage("Email không được vượt quá 256 ký tự")
+PhuongXa.Application\Validators\CreateContactMessageDtoValidator.cs | Line 11 | .NotEmpty().WithMessage("Họ tên không được để trống")
+PhuongXa.Application\Validators\CreateContactMessageDtoValidator.cs | Line 12 | .MaximumLength(100).WithMessage("Họ tên không được vượt quá 100 ký tự");
+PhuongXa.Application\Validators\CreateContactMessageDtoValidator.cs | Line 15 | .NotEmpty().WithMessage("Email không được để trống")
+PhuongXa.Application\Validators\CreateContactMessageDtoValidator.cs | Line 16 | .EmailAddress().WithMessage("Email không hợp lệ")
+PhuongXa.Application\Validators\CreateContactMessageDtoValidator.cs | Line 17 | .MaximumLength(256).WithMessage("Email không được vượt quá 256 ký tự");
+PhuongXa.Application\Validators\CreateContactMessageDtoValidator.cs | Line 20 | .Matches(@"^[0-9+\-\s()]{7,20}$").WithMessage("Số điện thoại không hợp lệ")
+PhuongXa.Application\Validators\CreateContactMessageDtoValidator.cs | Line 24 | .NotEmpty().WithMessage("Tiêu đề không được để trống")
+PhuongXa.Application\Validators\CreateContactMessageDtoValidator.cs | Line 25 | .MaximumLength(200).WithMessage("Tiêu đề không được vượt quá 200 ký tự");
+PhuongXa.Application\Validators\CreateContactMessageDtoValidator.cs | Line 28 | .NotEmpty().WithMessage("Nội dung không được để trống")
+PhuongXa.Application\Validators\CreateContactMessageDtoValidator.cs | Line 29 | .MinimumLength(10).WithMessage("Nội dung phải có ít nhất 10 ký tự")
+PhuongXa.Application\Validators\CreateContactMessageDtoValidator.cs | Line 30 | .MaximumLength(2000).WithMessage("Nội dung không được vượt quá 2000 ký tự");
+PhuongXa.Application\Validators\LoginDtoValidator.cs | Line 11 | .NotEmpty().WithMessage("Email không được để trống")
+PhuongXa.Application\Validators\LoginDtoValidator.cs | Line 12 | .EmailAddress().WithMessage("Email không hợp lệ")
+PhuongXa.Application\Validators\LoginDtoValidator.cs | Line 13 | .MaximumLength(256).WithMessage("Email không được vượt quá 256 ký tự");
+PhuongXa.Application\Validators\LoginDtoValidator.cs | Line 16 | .NotEmpty().WithMessage("Mật khẩu không được để trống")
+PhuongXa.Application\Validators\LoginDtoValidator.cs | Line 17 | .MaximumLength(128).WithMessage("Mật khẩu không được vượt quá 128 ký tự");
+PhuongXa.Application\Validators\RegisterDtoValidator.cs | Line 11 | .NotEmpty().WithMessage("Họ tên không được để trống")
+PhuongXa.Application\Validators\RegisterDtoValidator.cs | Line 12 | .MaximumLength(100).WithMessage("Họ tên không được vượt quá 100 ký tự");
+PhuongXa.Application\Validators\RegisterDtoValidator.cs | Line 15 | .NotEmpty().WithMessage("Email không được để trống")
+PhuongXa.Application\Validators\RegisterDtoValidator.cs | Line 16 | .EmailAddress().WithMessage("Email không hợp lệ")
+PhuongXa.Application\Validators\RegisterDtoValidator.cs | Line 17 | .MaximumLength(256).WithMessage("Email không được vượt quá 256 ký tự");
+PhuongXa.Application\Validators\RegisterDtoValidator.cs | Line 20 | .NotEmpty().WithMessage("Mật khẩu không được để trống")
+PhuongXa.Application\Validators\RegisterDtoValidator.cs | Line 21 | .MinimumLength(8).WithMessage("Mật khẩu phải có ít nhất 8 ký tự")
+PhuongXa.Application\Validators\RegisterDtoValidator.cs | Line 22 | .MaximumLength(128).WithMessage("Mật khẩu không được vượt quá 128 ký tự")
+PhuongXa.Application\Validators\RegisterDtoValidator.cs | Line 23 | .Matches("[A-Z]").WithMessage("Mật khẩu phải có ít nhất 1 chữ hoa")
+PhuongXa.Application\Validators\RegisterDtoValidator.cs | Line 24 | .Matches("[0-9]").WithMessage("Mật khẩu phải có ít nhất 1 chữ số");
+PhuongXa.Application\Validators\RegisterDtoValidator.cs | Line 27 | .NotEmpty().WithMessage("Xác nhận mật khẩu không được để trống")
+PhuongXa.Application\Validators\RegisterDtoValidator.cs | Line 28 | .Equal(x => x.Password).WithMessage("Xác nhận mật khẩu không khớp");
+PhuongXa.Application\Validators\RegisterDtoValidator.cs | Line 31 | .Matches(@"^[0-9+\-\s()]{7,20}$").WithMessage("Số điện thoại không hợp lệ")
+PhuongXa.Application\Validators\ServiceDtoValidators.cs | Line 11 | .NotEmpty().WithMessage("Tên dịch vụ không được để trống")
+PhuongXa.Application\Validators\ServiceDtoValidators.cs | Line 12 | .MaximumLength(300).WithMessage("Tên dịch vụ không được vượt quá 300 ký tự");
+PhuongXa.Application\Validators\ServiceDtoValidators.cs | Line 15 | .NotEmpty().WithMessage("Mã dịch vụ không được để trống")
+PhuongXa.Application\Validators\ServiceDtoValidators.cs | Line 16 | .MaximumLength(50).WithMessage("Mã dịch vụ không được vượt quá 50 ký tự")
+PhuongXa.Application\Validators\ServiceDtoValidators.cs | Line 17 | .Matches(@"^[A-Za-z0-9_-]+$").WithMessage("Mã dịch vụ chỉ chứa chữ, số, dấu gạch ngang và gạch dưới");
+PhuongXa.Application\Validators\ServiceDtoValidators.cs | Line 20 | .GreaterThan(0).WithMessage("Số ngày xử lý phải lớn hơn 0");
+PhuongXa.Application\Validators\ServiceDtoValidators.cs | Line 24 | .WithMessage("Phí dịch vụ không được âm");
+PhuongXa.Application\Validators\ServiceDtoValidators.cs | Line 27 | .GreaterThanOrEqualTo(0).WithMessage("Thứ tự sắp xếp không được âm");
+PhuongXa.Application\Validators\SubmitApplicationDtoValidator.cs | Line 11 | .NotEmpty().WithMessage("Dịch vụ không được để trống");
+PhuongXa.Application\Validators\SubmitApplicationDtoValidator.cs | Line 14 | .NotEmpty().WithMessage("Họ tên người nộp không được để trống")
+PhuongXa.Application\Validators\SubmitApplicationDtoValidator.cs | Line 15 | .MaximumLength(100).WithMessage("Họ tên không được vượt quá 100 ký tự");
+PhuongXa.Application\Validators\SubmitApplicationDtoValidator.cs | Line 18 | .NotEmpty().WithMessage("Email không được để trống")
+PhuongXa.Application\Validators\SubmitApplicationDtoValidator.cs | Line 19 | .EmailAddress().WithMessage("Email không hợp lệ")
+PhuongXa.Application\Validators\SubmitApplicationDtoValidator.cs | Line 20 | .MaximumLength(256).WithMessage("Email không được vượt quá 256 ký tự");
+PhuongXa.Application\Validators\SubmitApplicationDtoValidator.cs | Line 23 | .NotEmpty().WithMessage("Số điện thoại không được để trống")
+PhuongXa.Application\Validators\SubmitApplicationDtoValidator.cs | Line 24 | .Matches(@"^[0-9+\-\s()]{7,20}$").WithMessage("Số điện thoại không hợp lệ");
+PhuongXa.Application\Validators\SubmitApplicationDtoValidator.cs | Line 27 | .MaximumLength(300).WithMessage("Địa chỉ không được vượt quá 300 ký tự")
+PhuongXa.Application\Validators\SubmitApplicationDtoValidator.cs | Line 31 | .MaximumLength(1000).WithMessage("Ghi chú không được vượt quá 1000 ký tự")
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 13 | .NotEmpty().WithMessage("Họ tên không được để trống")
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 14 | .MaximumLength(100).WithMessage("Họ tên không được vượt quá 100 ký tự");
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 17 | .NotEmpty().WithMessage("Email không được để trống")
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 18 | .EmailAddress().WithMessage("Email không hợp lệ")
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 19 | .MaximumLength(256).WithMessage("Email không được vượt quá 256 ký tự");
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 22 | .NotEmpty().WithMessage("Mật khẩu không được để trống")
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 23 | .MinimumLength(8).WithMessage("Mật khẩu phải có ít nhất 8 ký tự")
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 24 | .MaximumLength(128).WithMessage("Mật khẩu không được vượt quá 128 ký tự")
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 25 | .Matches("[A-Z]").WithMessage("Mật khẩu phải có ít nhất 1 chữ hoa")
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 26 | .Matches("[0-9]").WithMessage("Mật khẩu phải có ít nhất 1 chữ số")
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 27 | .Matches("[^a-zA-Z0-9]").WithMessage("Mật khẩu phải có ít nhất 1 ký tự đặc biệt");
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 30 | .NotEmpty().WithMessage("Vai trò không được để trống")
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 31 | .Must(r => AllowedRoles.Contains(r)).WithMessage("Vai trò không hợp lệ (Admin, Editor, Viewer)");
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 35 | .WithMessage("Số điện thoại phải có 10 chữ số bắt đầu bằng 0");
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 46 | .NotEmpty().WithMessage("Họ tên không được để trống")
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 47 | .MaximumLength(100).WithMessage("Họ tên không được vượt quá 100 ký tự");
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 50 | .NotEmpty().WithMessage("Vai trò không được để trống")
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 51 | .Must(r => AllowedRoles.Contains(r)).WithMessage("Vai trò không hợp lệ (Admin, Editor, Viewer)");
+PhuongXa.Application\Validators\UserDtoValidators.cs | Line 55 | .WithMessage("Số điện thoại phải có 10 chữ số bắt đầu bằng 0");
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 29 | <p style="color:#6b7280;font-size:12px">Email này được gửi tự động, vui lòng không trả lời.</p>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 41 | _logger.LogWarning("Email chưa được cấu hình, bỏ qua gửi email tới {To}", to);
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 50 | var senderName = _config["Email:SenderName"] ?? "Cổng TTĐT Phường/Xã";
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 71 | _logger.LogError(ex, "Lỗi khi gửi email tới {To}: {Subject}", to, subject);
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 77 | var subject = $"[Xác nhận] Đã nhận hồ sơ – Mã tra cứu: {E(trackingCode)}";
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 79 | <h2 style="color:#1a56db">Xác nhận nộp hồ sơ thành công</h2>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 80 | <p>Xin chào <strong>{E(applicantName)}</strong>,</p>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 81 | <p>Hồ sơ của bạn đã được tiếp nhận thành công. Chi tiết như sau:</p>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 83 | <tr><td style="padding:8px;background:#f3f4f6;font-weight:bold">Dịch vụ:</td>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 85 | <tr><td style="padding:8px;background:#f3f4f6;font-weight:bold">Mã tra cứu:</td>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 87 | <tr><td style="padding:8px;background:#f3f4f6;font-weight:bold">Trạng thái:</td>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 88 | <td style="padding:8px">Đang chờ xử lý</td></tr>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 91 | <p style="margin:0">Vui lòng lưu lại <strong>mã tra cứu</strong> để theo dõi tiến trình xử lý hồ sơ.</p>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 102 | "Processing" => "Đang xử lý",
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 103 | "Done" => "Đã hoàn thành",
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 104 | "Rejected" => "Bị từ chối",
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 114 | var subject = $"[Cập nhật hồ sơ {E(trackingCode)}] Trạng thái: {statusDisplay}";
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 117 | $"<strong>Ghi chú từ cán bộ xử lý:</strong><br/>{E(processorNote)}</div>";
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 120 | <h2 style="color:#1a56db">Cập nhật trạng thái hồ sơ</h2>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 121 | <p>Xin chào <strong>{E(applicantName)}</strong>,</p>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 122 | <p>Hồ sơ của bạn đã được cập nhật trạng thái mới:</p>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 124 | <tr><td style="padding:8px;background:#f3f4f6;font-weight:bold">Dịch vụ:</td>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 126 | <tr><td style="padding:8px;background:#f3f4f6;font-weight:bold">Mã tra cứu:</td>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 128 | <tr><td style="padding:8px;background:#f3f4f6;font-weight:bold">Trạng thái mới:</td>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 138 | var subject = "Chào mừng bạn đến với Cổng thông tin điện tử Phường/Xã";
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 140 | <h2 style="color:#1a56db">Chào mừng {E(fullName)}!</h2>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 141 | <p>Tài khoản của bạn đã được tạo thành công trên Cổng thông tin điện tử Phường/Xã.</p>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 142 | <p>Bạn có thể sử dụng tài khoản để:</p>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 144 | <li>Nộp và theo dõi hồ sơ dịch vụ công trực tuyến</li>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 145 | <li>Đăng bình luận và tương tác với các bài viết</li>
+PhuongXa.Infrastructure\Services\SmtpEmailService.cs | Line 146 | <li>Nhận thông báo cập nhật trạng thái hồ sơ</li>

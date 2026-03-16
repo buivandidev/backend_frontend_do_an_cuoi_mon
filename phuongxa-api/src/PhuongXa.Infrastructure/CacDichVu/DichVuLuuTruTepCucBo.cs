@@ -1,0 +1,67 @@
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using PhuongXa.Application.CacGiaoDien;
+
+namespace PhuongXa.Infrastructure.CacDichVu;
+
+public class DichVuLuuTruTepCucBo : IDichVuLuuTruTep
+{
+    private readonly string _duongDanGocWeb;
+    private readonly string _urlGoc;
+    private readonly ILogger<DichVuLuuTruTepCucBo> _nhatKy;
+
+    public DichVuLuuTruTepCucBo(IWebHostEnvironment moiTruong, IConfiguration cauHinh, ILogger<DichVuLuuTruTepCucBo> nhatKy)
+    {
+        _duongDanGocWeb = moiTruong.WebRootPath ?? Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+        _urlGoc = cauHinh["FileStorage:BaseUrl"] ?? "http://localhost:5000";
+        _nhatKy = nhatKy;
+    }
+
+    public async Task<string> LuuTepAsync(Stream luongTep, string tenTep, string loaiNoiDung, string thuMuc = "uploads")
+    {
+        // Whitelist allowed extensions
+        var duoiChoPhep = new[] { ".jpg", ".jpeg", ".png", ".gif", ".webp", ".mp4", ".webm", ".ogg", ".pdf", ".doc", ".docx", ".xlsx", ".xls" };
+        var duoiTep = Path.GetExtension(tenTep).ToLowerInvariant();
+        if (!duoiChoPhep.Contains(duoiTep))
+            throw new InvalidOperationException("Loại tệp không được phép");
+
+        // Generate safe file name (never trust user input)
+        var tenTepAnToan = $"{Guid.NewGuid()}{duoiTep}";
+
+        var duongDanThuMuc = Path.Combine(_duongDanGocWeb, thuMuc);
+        var namThang = DateTime.UtcNow.ToString("yyyy/MM");
+        var duongDanThuMucDayDu = Path.Combine(duongDanThuMuc, namThang);
+        Directory.CreateDirectory(duongDanThuMucDayDu);
+
+        // Verify final path stays within wwwroot
+        var duongDanDay = Path.GetFullPath(Path.Combine(duongDanThuMucDayDu, tenTepAnToan));
+        if (!duongDanDay.StartsWith(Path.GetFullPath(_duongDanGocWeb), StringComparison.OrdinalIgnoreCase))
+            throw new InvalidOperationException("Đường dẫn tệp không hợp lệ");
+
+        using var luongXuatTep = new FileStream(duongDanDay, FileMode.Create);
+        await luongTep.CopyToAsync(luongXuatTep);
+
+        return Path.Combine(thuMuc, namThang, tenTepAnToan).Replace("\\", "/");
+    }
+
+    public Task XoaTepAsync(string duongDanTep)
+    {
+        var duongDanDayDu = Path.GetFullPath(Path.Combine(_duongDanGocWeb, duongDanTep));
+        var duongDanGocChoPhep = Path.GetFullPath(_duongDanGocWeb);
+
+        if (!duongDanDayDu.StartsWith(duongDanGocChoPhep, StringComparison.OrdinalIgnoreCase))
+        {
+            _nhatKy.LogWarning("Attempted path traversal delete blocked: {FilePath}", duongDanTep);
+            return Task.CompletedTask;
+        }
+
+        if (File.Exists(duongDanDayDu))
+            File.Delete(duongDanDayDu);
+
+        return Task.CompletedTask;
+    }
+
+    public string LayUrlTep(string duongDanTep) =>
+        string.IsNullOrEmpty(duongDanTep) ? string.Empty : $"{_urlGoc}/{duongDanTep}";
+}

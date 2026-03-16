@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PhuongXa.API/PhuongXa.API.csproj" />
+    <Project Path="src/PhuongXa.Application/PhuongXa.Application.csproj" />
+    <Project Path="src/PhuongXa.Domain/PhuongXa.Domain.csproj" />
+    <Project Path="src/PhuongXa.Infrastructure/PhuongXa.Infrastructure.csproj" />
+  </Folder>
+</Solution>

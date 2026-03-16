@@ -1,0 +1,53 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "phuongxa-api", "phuongxa-api", "{0134C02D-F49E-F0C4-8701-B9ADD7F807FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C0CE0635-0D93-1985-512F-895A2C4F98E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhuongXa.API", "phuongxa-api\src\PhuongXa.API\PhuongXa.API.csproj", "{0851AA40-0B6E-488A-DB7F-11A0E077E225}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhuongXa.Application", "phuongxa-api\src\PhuongXa.Application\PhuongXa.Application.csproj", "{E1BB5CC2-51DF-CB76-81D7-4D04D27BE34A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhuongXa.Domain", "phuongxa-api\src\PhuongXa.Domain\PhuongXa.Domain.csproj", "{7805576A-AF37-1A86-FEFD-2478B73113E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhuongXa.Infrastructure", "phuongxa-api\src\PhuongXa.Infrastructure\PhuongXa.Infrastructure.csproj", "{C19C3CFA-5F2A-E3F3-A314-A1CCAAB6AFDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0851AA40-0B6E-488A-DB7F-11A0E077E225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0851AA40-0B6E-488A-DB7F-11A0E077E225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0851AA40-0B6E-488A-DB7F-11A0E077E225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0851AA40-0B6E-488A-DB7F-11A0E077E225}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1BB5CC2-51DF-CB76-81D7-4D04D27BE34A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1BB5CC2-51DF-CB76-81D7-4D04D27BE34A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1BB5CC2-51DF-CB76-81D7-4D04D27BE34A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1BB5CC2-51DF-CB76-81D7-4D04D27BE34A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7805576A-AF37-1A86-FEFD-2478B73113E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7805576A-AF37-1A86-FEFD-2478B73113E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7805576A-AF37-1A86-FEFD-2478B73113E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7805576A-AF37-1A86-FEFD-2478B73113E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C19C3CFA-5F2A-E3F3-A314-A1CCAAB6AFDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C19C3CFA-5F2A-E3F3-A314-A1CCAAB6AFDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C19C3CFA-5F2A-E3F3-A314-A1CCAAB6AFDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C19C3CFA-5F2A-E3F3-A314-A1CCAAB6AFDE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C0CE0635-0D93-1985-512F-895A2C4F98E9} = {0134C02D-F49E-F0C4-8701-B9ADD7F807FA}
+		{0851AA40-0B6E-488A-DB7F-11A0E077E225} = {C0CE0635-0D93-1985-512F-895A2C4F98E9}
+		{E1BB5CC2-51DF-CB76-81D7-4D04D27BE34A} = {C0CE0635-0D93-1985-512F-895A2C4F98E9}
+		{7805576A-AF37-1A86-FEFD-2478B73113E0} = {C0CE0635-0D93-1985-512F-895A2C4F98E9}
+		{C19C3CFA-5F2A-E3F3-A314-A1CCAAB6AFDE} = {C0CE0635-0D93-1985-512F-895A2C4F98E9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {582C04A0-F7A4-4DE9-BBF0-B0167BAFA805}
+	EndGlobalSection
+EndGlobal
