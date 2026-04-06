@@ -21,7 +21,7 @@ export default function SoDoTrang() {
             <li><Link href="/tra-cuu">Tra cứu hồ sơ</Link></li>
             <li><Link href="/dang-nhap">Đăng nhập tài khoản</Link></li>
             <li><Link href="/dang-ky">Đăng ký mới</Link></li>
-            <li><Link href="/ca-nhan/ho-so-dvc">Hồ sơ cá nhân của tôi</Link></li>
+            <li><Link href="/ca-nhan/ho-so">Hồ sơ cá nhân của tôi</Link></li>
           </ul>
           <ul className="space-y-3">
             <li className="font-bold text-slate-900 dark:text-white">Pháp lý & Hệ thống</li>

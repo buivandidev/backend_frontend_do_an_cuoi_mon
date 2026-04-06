@@ -19,7 +19,7 @@ export default function NopTrucTuyenMultiStep({
       setCurrentStep(currentStep + 1);
     } else {
       alert("Hồ sơ đã gửi thành công!");
-      router.push("/ca-nhan/ho-so-dvc");
+      router.push("/ca-nhan/quan-ly-ho-so");
     }
   };
 
