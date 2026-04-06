@@ -28,8 +28,8 @@ public class BaiVietController : BaseApiController
     }
 
     [HttpGet]
-    public async Task<IActionResult> LayTatCa([FromQuery] string? timKiem, [FromQuery] Guid? danhMucId,
-        [FromQuery] bool? noiBat, [FromQuery] int trang = 1, [FromQuery] int kichThuocTrang = 12)
+    public async    Task<IActionResult> LayTatCa([FromQuery] string? timKiem, [FromQuery] Guid? danhMucId,
+        [FromQuery]    bool? noiBat, [FromQuery] int trang = 1, [FromQuery] int kichThuocTrang = 12)
     {
         (trang, kichThuocTrang) = ChuanHoaPhanTrang(trang, kichThuocTrang);
 
